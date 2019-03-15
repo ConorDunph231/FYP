@@ -1,0 +1,47 @@
+<!Doctype html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Conor Dunphy"/>
+        <meta name="version"  content="1.0.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>M2 Data visualisations</title>
+        <!--Including Chart.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+        <script>
+            document.addEventListener ("DOMContentLoaded", () => {
+                var ctx = document.getElementById("myChart").getContext('2d');
+                console.log (ctx)
+
+                var chart = new Chart(ctx, {
+                //Specifying the type of chart you need
+                type: "line",
+                
+                //The data to be visualised.
+                data: {
+                    labels:["January", "February", "March", "April", "May", "June", "July"],
+                    datasets:[{
+                        label: "My First Dataset",
+                        backgroundColor: "rgba(255, 99, 132, 0.5)",
+                        borderColor: "rgb(255, 99, 132)",
+                        data: [0, 10, 5, 2, 20, 30, 45],
+                    }]
+                },
+
+                options:{}
+            });
+            });
+            
+
+            
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+    </body>
+</html>
